@@ -32,7 +32,7 @@ public class ProductService {
     }
 
     public void deleteProduct(String productId) {
-        repo.deleteById(Long.getLong(productId));
+        repo.deleteById(Long.parseLong(productId));
     }
 
     public Product updateProduct(Product product) throws CustomException {

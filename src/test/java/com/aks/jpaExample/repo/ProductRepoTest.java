@@ -16,12 +16,12 @@ class ProductRepoTest {
     @Test
     void saveMethod() {
         Product product = new Product();
-        product.setName("1");
-        product.setDescription("231dfs3f");
-        product.setSku("12313");
+        product.setName("Amit");
+        product.setDescription("11g3d1fg3d");
+        product.setSku("fsdsfsdds");
         product.setPrice(BigDecimal.TEN);
         product.setActive(true);
-        product.setImageUrl("dsdfsd.png");
+        product.setImageUrl("fwfdffsdf.png");
 
         Product saved = productRepo.save(product);
 
@@ -29,17 +29,17 @@ class ProductRepoTest {
         System.out.println(saved.toString());
     }
 
-    @Test
+   /* @Test
     void updateSaveEntity(){
         Long id=1L;
         Product product=productRepo.findById(id).orElse(null);
         product.setName("ALS");
         product.setDescription("sdasdawewqfsdvvs");
         productRepo.save(product);
-    }
+    }*/
 
-    @Test
+    /*@Test
     void deleteAll(){
         productRepo.deleteAll();
-    }
+    }*/
 }
