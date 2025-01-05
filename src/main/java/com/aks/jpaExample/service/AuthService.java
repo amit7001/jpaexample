@@ -35,6 +35,6 @@ public class AuthService {
 
     public boolean login(Login login) {
         Optional<AuthDto> authDetails= authRepo.findById((long) login.getId());
-        return  authDetails.isPresent()?authDetails.get().getPassword().equals(login.getPassword()):false;
+        return authDetails.map(authDto -> authDto.getPassword().equals(login.getPassword())).orElse(false);
     }
 }
