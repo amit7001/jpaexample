@@ -1,6 +1,6 @@
 package com.aks.jpaExample.repo;
 
-import com.aks.jpaExample.entity.Product;
+import com.aks.jpaExample.entity.ProductDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ class ProductRepoTest {
 
     @Test
     void saveMethod() {
-        Product product = new Product();
+        ProductDto product = new ProductDto();
         product.setName("Amit");
         product.setDescription("11g3d1fg3d");
         product.setSku("fsdsfsdds");
@@ -23,7 +23,7 @@ class ProductRepoTest {
         product.setActive(true);
         product.setImageUrl("fwfdffsdf.png");
 
-        Product saved = productRepo.save(product);
+        ProductDto saved = productRepo.save(product);
 
         System.out.println(saved.getId());
         System.out.println(saved.toString());

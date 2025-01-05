@@ -1,7 +1,8 @@
 package com.aks.jpaExample.controller;
 
 import com.aks.jpaExample.Exception.CustomException;
-import com.aks.jpaExample.entity.Product;
+import com.aks.jpaExample.entity.ProductDto;
+import com.aks.jpaExample.model.Product;
 import com.aks.jpaExample.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class ProductController {
     }
 
     @GetMapping("/product/{productId}")
-    Product getProductById(@PathVariable String productId) throws CustomException {
+    ProductDto getProductById(@PathVariable String productId) throws CustomException {
         return service.getProductById(productId);
     }
 
@@ -34,7 +35,7 @@ public class ProductController {
     }
 
     @PutMapping("/product")
-    Product updateProduct(@RequestBody Product product) throws CustomException {
+    ProductDto updateProduct(@RequestBody ProductDto product) throws CustomException {
         return service.updateProduct(product);
     }
 }

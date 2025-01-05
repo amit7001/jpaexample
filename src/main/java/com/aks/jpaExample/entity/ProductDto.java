@@ -2,7 +2,6 @@ package com.aks.jpaExample.entity;
 
 
 import jakarta.persistence.*;
-import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Products", schema = "ecommerce", uniqueConstraints = {@UniqueConstraint(name = "sku_unique", columnNames = "sku")})
-public class Product {
+public class ProductDto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "product_generator")
     @SequenceGenerator(name = "product_generator",sequenceName = "product_sequence_name",allocationSize = 1)
